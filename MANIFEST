@@ -1,0 +1,12 @@
+Changes
+MANIFEST
+Makefile.PL
+README
+gudule
+lib/Gudule/Bot.pm
+lib/Gudule/Config.pm
+lib/Gudule/Server.pm
+lib/Gudule/Util.pm
+t/00-load.t
+t/pod-coverage.t
+t/pod.t

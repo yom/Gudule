@@ -1,0 +1,105 @@
+#!/usr/bin/perl
+
+eval 'exec /usr/bin/perl  -S $0 ${1+"$@"}'
+    if 0; # not running under some shell
+# vim:ts=4 sw=4 ft=perl et:
+
+use strict;
+use warnings;
+
+use Gudule::Server;
+
+# Help init scripts
+$0 = 'gudule';
+
+my $g = Gudule::Server->server;
+$g->run;
+
+1;
+
+__END__
+
+=head1 NAME
+
+gudule - Bot::BasicBot::Pluggable bots server
+
+=head1 SYNOPSIS
+
+ $ gudule <OPTIONS>
+
+=head1 OPTIONS
+
+=over 8
+
+=item B<-c FILE> | B<--config=FILE>
+
+Read configuration from FILE.
+
+Default: /etc/gudule.conf
+
+=item B<-n NICK> | B<--nick=NICK>
+
+Set default nickname.
+
+Default: gudule
+
+=item B<-a ALTNICK> | B<--altnick=ALTNICK [--altnick=ALTNICK2 ...]>
+
+Set default alternate nickname(s).
+
+Default: gudule_, gud
+
+=item B<-u USERNAME> | B<--username=USERNAME>
+
+Set default username.
+
+Default: gudule v$VERSION
+
+=item B<-r REALNAME> | B<--realname=REALNAME>
+
+Set default realname.
+
+Default: gudule
+
+=item B<-m MODULE> | B<--module=MODULE [--module=MODULE2 ...]>
+
+Load specified module(s) by default.
+
+Default: Loader, Auth
+
+=item B<-dbpath=/path/to/db>
+
+Set default database path.
+
+Default: /var/lib/gudule
+
+=item B<-pidpath=/path/to/pid>
+
+Set default PID path.
+
+Default: /var/run/gudule
+
+=item B<--daemon> | B<--nodaemon>
+
+Enable/disable daemon mode.
+
+Default: enabled
+
+=back
+
+=head1 AUTHOR
+
+Guillaume Blairon C<< <g at yom.be> >>
+
+=head1 BUGS
+
+Please report any to Guillaume Blairon C<< <g at yom.be> >>
+
+=head1 LICENSE
+
+Copyright 2009 Guillaume Blairon, all rights reserved.
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+
+=cut
